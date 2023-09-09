@@ -13,7 +13,7 @@ public class Shoot : MonoBehaviour
 
     private float shootTimer;
     private float reloadTimer;
-    private float reloadTime = 1.0f;
+    private float reloadTime = 1.962f;
     private float shootTime = 0.06f;
 
     private int bullets = 5;
