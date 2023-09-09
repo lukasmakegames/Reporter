@@ -37,15 +37,30 @@ public class Shoot : MonoBehaviour
             float distance = Vector2.Distance(targetCenter, hitPoint);
 
             // Display the distance in the UI Text.
-            if (distance<1.0f){
-                if(distance<0.2f){
+            if (distance < 1.0f)
+            {
+                if (distance < 0.2f)
+                {
                     Debug.Log("500 points!");
-                }else if(distance<0.4f){
+                    ScoreManager.Instance.HitTarget(hitPoint, 500, Color.red);
+                }
+                else if (distance < 0.4f)
+                {
                     Debug.Log("200 points!");
-                }else if(distance<0.5f){
+                    ScoreManager.Instance.HitTarget(hitPoint, 200, Color.yellow);
+
+                }
+                else if (distance < 0.5f)
+                {
                     Debug.Log("80 points!");
-                }else{
+                    ScoreManager.Instance.HitTarget(hitPoint, 80, Color.blue);
+
+                }
+                else
+                {
                     Debug.Log("10 points!");
+                    ScoreManager.Instance.HitTarget(hitPoint, 10, Color.green);
+
                 }
             }
         }
