@@ -47,8 +47,7 @@ public class Wander : MonoBehaviour
     {
         // Generate a random target position within the wander radius.
         float randomX = Mathf.Clamp(Random.Range(minX, maxX), minX, maxX);
-        float randomY = Mathf.Clamp(Random.Range(minY, maxY), minY, maxY);
 
-        targetPosition = new Vector2(randomX, randomY);
+        targetPosition = new Vector2(randomX, rectTransform.localPosition.y);
     }
 }

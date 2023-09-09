@@ -6,6 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
     public GameObject scoreDisplayPrefab;
     public Transform scoreDisplayParent;
+    public Text totalScoreText;
     public float scoreAnimationDuration = 1f;
     public float displayTime = 1.5f;
 
@@ -41,12 +42,13 @@ public class ScoreManager : MonoBehaviour
         scoreDisplay.transform.position = hitPosition;
 
         scoreDisplay.GetComponent<Text>().color = color;
-        
+
         // Animate the score display using a coroutine.
         StartCoroutine(AnimateScoreDisplay(scoreDisplay));
 
         // Increase the score.
         score += pointsPerHit;
+        totalScoreText.text = "Score:" + (score).ToString().PadLeft(5, '0');
     }
 
     private IEnumerator AnimateScoreDisplay(GameObject scoreDisplay)
